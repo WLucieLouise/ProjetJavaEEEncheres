@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	//Petit test juste pour voir si ça fonctionne -Lucie 
+	//Petit test juste pour voir si ça fonctionne -Lucie
+	//Petit test également ^^ - Noémie
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
