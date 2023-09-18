@@ -15,6 +15,8 @@ public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	//Petit test juste pour voir si ça fonctionne -Lucie 
+	
+	// Mon petit commentaire a Baptiste
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
