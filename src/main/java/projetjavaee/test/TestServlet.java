@@ -17,6 +17,8 @@ public class TestServlet extends HttpServlet {
 	//Petit test juste pour voir si ça fonctionne -Lucie 
 	
 	// Mon petit commentaire a Baptiste
+	
+	//essai Penelope ce coup ci normalement je ne suis pas censée affecter le main?
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
