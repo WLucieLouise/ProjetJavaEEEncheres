@@ -16,7 +16,7 @@ public class profilUtilisateurServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// à voir ce qu'il y a à mettre ici
 	}
 
 }
