@@ -15,6 +15,8 @@
 	<label for="mdp">Mot de Passe: </label>
 	<input type="password" id="mdp" name="mdp"/>${ erreur }<br/>
 	<input type="submit" value="connection"/>
+	<input type="submit" value="Créer un compte"/>
+	//partie rappel mdp //se souvenir de moi
 </form>
 
 </body>
