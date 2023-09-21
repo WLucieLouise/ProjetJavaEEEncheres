@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.eni.ecole.projet.modele.bll.UtilisateurManager;
+import fr.eni.ecole.projet.modele.bll.UtilisateurManagerImpl;
+import fr.eni.ecole.projet.modele.bo.Utilisateur;
 
 /**
  * Servlet implementation class CreationCompteServlet
@@ -16,6 +18,7 @@ import fr.eni.ecole.projet.modele.bll.UtilisateurManager;
 public class CreationCompteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private UtilisateurManager utilisateurManager = UtilisateurManagerImpl.getInstance();
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,7 +42,16 @@ public class CreationCompteServlet extends HttpServlet {
 		String mot_de_passe = request.getParameter("mot_de_passe");
 		String confirm_mot_de_passe = request.getParameter("confirm_mot_de_passe");
 		
-		//boolean verif = UtilisateurManager.verifMotDePasse(mot_de_passe, confirm_mot_de_passe);
+		boolean verif = UtilisateurManager.verifMotDePasse(mot_de_passe, confirm_mot_de_passe);
+		
+		if(verif) {
+			Utilisateur utilisateur = utilisateurManager.creerUtilisateu(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, confirm_mot_de_passe);
+			request.setAttribute("utilisateur", Utilisateur);
+			this.getServletContext().getRequestDispatcher("/creationCompte.jsp").forward(request, response);
+		} else {
+			request.setAttribute("erreurMdp", "Erreur sur le mot de passe et sa confirmation");
+			this.getServletContext().getRequestDispatcher("/creationCompte.jsp").forward(request, response);
+		}
 
 	}
 
