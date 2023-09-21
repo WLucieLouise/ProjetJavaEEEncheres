@@ -30,15 +30,15 @@ public class ConnectionServlet extends HttpServlet {
 		System.out.printf(identifiant);
 		System.out.printf(mdp);
 		
-		/*Utilisateur utilisateur= UtilisateurManager.verifCnx(identifiant, mdp);
+		Utilisateur utilisateur= UtilisateurManager.verifConnection(identifiant, mdp);
 		
-		if(utilisateur.getId()>0) {
+		if(utilisateur.getNoUtilisateur()>0) {
 			request.setAttribute("utilisateur", utilisateur);
 			this.getServletContext().getRequestDispatcher("/compte.jsp").forward(request, response);
 		}else{
 			request.setAttribute ("erreur", "Mot de passe ou E-mail incorrect");
 			this.getServletContext().getRequestDispatcher("/formulaireConnection.jsp").forward(request,response);
-		}*/
+		}
 	}
 
 }

@@ -6,7 +6,11 @@ public interface UtilisateurDAO {
 
 	Utilisateur creerUtilisateur (Utilisateur utilisateur);
 
-	Utilisateur verifConnection(String identifiant, String mdp);
+	Utilisateur majUtilisateur (Utilisateur utilisateur);
 
-	
+	Utilisateur suprimerUtilisateur(Utilisateur utilisateur);
+
+	Utilisateur selectUtilisateur(Utilisateur utilisateur);
+
+	Utilisateur verifConnection(String identifiant, String mdp);
 }
