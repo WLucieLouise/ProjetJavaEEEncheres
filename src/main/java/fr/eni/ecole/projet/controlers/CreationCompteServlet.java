@@ -1,0 +1,49 @@
+package fr.eni.ecole.projet.controlers;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import fr.eni.ecole.projet.modele.bll.UtilisateurManager;
+
+/**
+ * Servlet implementation class CreationCompteServlet
+ */
+@WebServlet("/CreationCompte")
+public class CreationCompteServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		this.getServletContext().getRequestDispatcher("/WEB-INF/creationCompte.jsp").forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String pseudo = request.getParameter("pseudo");
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
+		String email = request.getParameter("email");
+		String telephone = request.getParameter("telephone");
+		String rue = request.getParameter("rue");
+		String code_postal = request.getParameter("code_postal");
+		String ville = request.getParameter("ville");
+		String mot_de_passe = request.getParameter("mot_de_passe");
+		String confirm_mot_de_passe = request.getParameter("confirm_mot_de_passe");
+		
+		//boolean verif = UtilisateurManager.verifMotDePasse(mot_de_passe, confirm_mot_de_passe);
+
+	}
+
+
+		
+
+}
