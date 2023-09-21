@@ -1,4 +1,4 @@
-package fr.eni.ecole.projet.modele.dal;
+package main.java.fr.eni.ecole.projet.modele.dal;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import fr.eni.ecole.application.modele.dal.ConnectionProvider;
-import fr.eni.ecole.projet.modele.bo.Utilisateur;
+import main.java.fr.eni.ecole.projet.modele.dal.ConnectionProvider;
+import main.java.fr.eni.ecole.projet.modele.bo.Utilisateur;
 
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 

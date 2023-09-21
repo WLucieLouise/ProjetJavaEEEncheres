@@ -1,4 +1,4 @@
-package fr.eni.ecole.projet.modele.bo;
+package main.java.fr.eni.ecole.projet.modele.bo;
 
 public class Enchere {
 
