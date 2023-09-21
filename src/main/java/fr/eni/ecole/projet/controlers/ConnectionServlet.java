@@ -1,4 +1,4 @@
-package main.java.fr.eni.ecole.projet.controlers;
+package src.main.java.fr.eni.ecole.projet.controlers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.java.fr.eni.ecole.projet.modele.bll.UtilisateurManager;
-import main.java.fr.eni.ecole.projet.modele.bo.Utilisateur;
+import src.main.java.fr.eni.ecole.projet.modele.bll.UtilisateurManager;
+import src.main.java.fr.eni.ecole.projet.modele.bo.Utilisateur;
 
 
 

@@ -1,4 +1,4 @@
-package main.java.fr.eni.ecole.projet.modele.dal;
+package src.main.java.fr.eni.ecole.projet.modele.dal;
 
 public class DAOFactory {
 

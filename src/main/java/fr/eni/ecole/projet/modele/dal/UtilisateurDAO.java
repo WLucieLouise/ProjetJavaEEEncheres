@@ -1,6 +1,6 @@
-package main.java.fr.eni.ecole.projet.modele.dal;
+package src.main.java.fr.eni.ecole.projet.modele.dal;
 
-import main.java.fr.eni.ecole.projet.modele.bo.Utilisateur;
+import src.main.java.fr.eni.ecole.projet.modele.bo.Utilisateur;
 
 public interface UtilisateurDAO {
 
