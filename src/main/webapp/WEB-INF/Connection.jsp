@@ -13,7 +13,7 @@
 	<label for="identifiant">Identifiant (Votre E-mail): </label>
 	<input type="text" id="identifiant" name="identifiant"/><br/>
 	<label for="mdp">Mot de Passe: </label>
-	<input type="password" id="mdp" name="mdp"/>${ erreur }<br/>
+	<input type="password" id="mdp" name="mdp"/> ${erreur}<br/>
 	<input type="submit" value="connection"/>
 	<input type="submit" value="Créer un compte"/>
 	//partie rappel mdp //se souvenir de moi
