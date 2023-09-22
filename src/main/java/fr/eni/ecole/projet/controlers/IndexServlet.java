@@ -1,4 +1,4 @@
-package src.main.java.fr.eni.ecole.projet.controlers;
+package fr.eni.ecole.projet.controlers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

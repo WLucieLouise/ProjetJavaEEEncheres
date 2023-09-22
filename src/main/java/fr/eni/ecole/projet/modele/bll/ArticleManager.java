@@ -1,4 +1,4 @@
-package src.main.java.fr.eni.ecole.projet.modele.bll;
+package fr.eni.ecole.projet.modele.bll;
 
 public interface ArticleManager {
 

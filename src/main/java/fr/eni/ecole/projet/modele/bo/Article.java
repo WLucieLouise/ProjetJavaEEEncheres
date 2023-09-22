@@ -1,4 +1,4 @@
-package src.main.java.fr.eni.ecole.projet.modele.bo;
+package fr.eni.ecole.projet.modele.bo;
 
 import java.time.LocalDate;
 
@@ -93,6 +93,9 @@ public class Article {
 		this.etatVente = etatVente;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Article [nom=" + nomArticle + ", description=" + description + ",dateDebutEncheres=" + dateDebutEncheres + ",dateFinEncheres=" + dateFinEncheres + ", miseAPrix=" + miseAPrix + ", prixVente=" + prixVente + ",etatvente=" + etatVente + "]";
+	}
 	
 }

@@ -1,4 +1,4 @@
-package src.main.java.fr.eni.ecole.projet.modele.dal;
+package fr.eni.ecole.projet.modele.dal;
 
 import java.sql.Connection;
 import java.sql.SQLException;

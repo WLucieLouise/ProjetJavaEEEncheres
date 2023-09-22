@@ -1,4 +1,4 @@
-package src.main.java.fr.eni.ecole.projet.controlers;
+package fr.eni.ecole.projet.controlers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import src.main.java.fr.eni.ecole.projet.modele.bll.UtilisateurManager;
-import src.main.java.fr.eni.ecole.projet.modele.bo.Utilisateur;
+import fr.eni.ecole.projet.modele.bll.UtilisateurManager;
+import fr.eni.ecole.projet.modele.bo.Utilisateur;
 
 
 
@@ -30,15 +30,15 @@ public class ConnectionServlet extends HttpServlet {
 		System.out.printf(identifiant);
 		System.out.printf(mdp);
 		
-		/*Utilisateur utilisateur= UtilisateurManager.verifCnx(identifiant, mdp);
+		Utilisateur utilisateur= UtilisateurManager.verifConnection(identifiant, mdp);
 		
-		if(utilisateur.getId()>0) {
+		if(utilisateur.getNoUtilisateur()>0) {
 			request.setAttribute("utilisateur", utilisateur);
 			this.getServletContext().getRequestDispatcher("/compte.jsp").forward(request, response);
 		}else{
 			request.setAttribute ("erreur", "Mot de passe ou E-mail incorrect");
 			this.getServletContext().getRequestDispatcher("/formulaireConnection.jsp").forward(request,response);
-		}*/
+		}
 	}
 
 }

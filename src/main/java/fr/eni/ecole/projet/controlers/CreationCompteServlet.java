@@ -1,4 +1,4 @@
-package src.main.java.fr.eni.ecole.projet.controlers;
+package fr.eni.ecole.projet.controlers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import src.main.java.fr.eni.ecole.projet.modele.bll.UtilisateurManager;
+import fr.eni.ecole.projet.modele.bll.UtilisateurManager;
 
 /**
  * Servlet implementation class CreationCompteServlet
