@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-<Resource 
-	name="jdbc/pool_cnx" 
-	driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+
+<Resource
+	name="mysql"
+		
+	driverClassName="com.mysql.cj.jdbc.Driver"
 	type="javax.sql.DataSource"
-	
-	url="jdbc:sqlserver://localhost;databasename=ENCHERES;trustservercertificate=true"
+		
+	url="jdbc:mysql://localhost:3306/ENCHERES"
 	username="sa"
-	password="Pa$$w0rd"
-	
+	password="Moumoune99@"
+		
 	maxTotal="100"
 	maxIdle="30"
 	maxWaitMillis="10000"
-	/>
+/>
+	
+<Resource
+	name="sqlserver"
+	driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+	type="javax.sql.DataSource"
+		
+	url="jdbc:sqlserver://localhost;databasename=ENCHERES;trustservercertificate=true"
+	username="sa"
+	password="Moumoune99@"
+		
+	maxTotal="100"
+	maxIdle="30"
+	maxWaitMillis="10000"
+/>
 </Context>
