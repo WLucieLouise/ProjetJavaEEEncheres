@@ -11,8 +11,6 @@ import fr.eni.ecole.projet.modele.bll.UtilisateurManager;
 import fr.eni.ecole.projet.modele.bo.Utilisateur;
 
 
-
-
 @WebServlet("/Connection")
 public class ConnectionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,7 +28,7 @@ public class ConnectionServlet extends HttpServlet {
 		System.out.printf(identifiant);
 		System.out.printf(mdp);
 		
-		Utilisateur utilisateur= UtilisateurManager.verifConnection(identifiant, mdp);
+		Utilisateur utilisateur= UtilisateurManager.verifierConnexion(email, mdp);
 		
 		if(utilisateur.getNoUtilisateur()>0) {
 			request.setAttribute("utilisateur", utilisateur);

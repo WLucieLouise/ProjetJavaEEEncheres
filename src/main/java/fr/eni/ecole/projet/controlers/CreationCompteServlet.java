@@ -45,7 +45,7 @@ public class CreationCompteServlet extends HttpServlet {
 		boolean verif = UtilisateurManager.verifMotDePasse(mot_de_passe, confirm_mot_de_passe);
 		
 		if(verif) {
-			Utilisateur utilisateur = utilisateurManager.creerUtilisateu(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, confirm_mot_de_passe);
+			Utilisateur utilisateur = utilisateurManager.creerUtilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, confirm_mot_de_passe);
 			request.setAttribute("utilisateur", Utilisateur);
 			this.getServletContext().getRequestDispatcher("/creationCompte.jsp").forward(request, response);
 		} else {

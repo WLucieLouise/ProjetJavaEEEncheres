@@ -6,7 +6,7 @@ import fr.eni.ecole.projet.modele.bo.Utilisateur;
 
 public class UtilisateurManagerImpl implements UtilisateurManager {
 	
-	private static UtilsateurManager utilisateurManager = null;
+	private static UtilisateurManager utilisateurManager = null;
 	
 	private UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
 	
