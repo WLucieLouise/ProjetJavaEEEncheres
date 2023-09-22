@@ -22,19 +22,19 @@ public class ConnectionServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String identifiant=request.getParameter ("identifiant");
+		String pseudo=request.getParameter ("pseudo");
 		String mdp=request.getParameter ("mdp");
 		
-		System.out.printf(identifiant);
+		System.out.printf(pseudo);
 		System.out.printf(mdp);
 		
-		Utilisateur utilisateur= UtilisateurManager.verifierConnexion(email, mdp);
+		Utilisateur utilisateur= UtilisateurManager.verifierConnexion(pseudo, mdp);
 		
 		if(utilisateur.getNoUtilisateur()>0) {
 			request.setAttribute("utilisateur", utilisateur);
 			this.getServletContext().getRequestDispatcher("/compte.jsp").forward(request, response);
 		}else{
-			request.setAttribute ("erreur", "Mot de passe ou E-mail incorrect");
+			request.setAttribute ("erreur", "Mot de passe ou identifiant incorrect");
 			this.getServletContext().getRequestDispatcher("/formulaireConnection.jsp").forward(request,response);
 		}
 	}

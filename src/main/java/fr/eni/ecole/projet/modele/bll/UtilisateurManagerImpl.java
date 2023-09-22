@@ -28,15 +28,15 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 		return false;
 	}
 	
-	public Utilisateur creerUtilisateur(String nom, String prenom, String email, String mot_de_passe) {
-		Utilisateur utilisateur = new Utilisateur(nom, prenom, email, mot_de_passe);
+	public Utilisateur creerUtilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue, String code_postal,String ville, String mot_de_passe, int credit, boolean administrateur) {
+		Utilisateur utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur);
 		utilisateurDAO.creerUtilisateur(utilisateur);
 		return utilisateur;
 	}
 
 	@Override
 	public Utilisateur verifierConnexion(String email, String motDePasse) {
-		return utilisateurDAO.verifConnection(email, motDePasse);
+		return utilisateurDAO.verifierConnexion(email, motDePasse);
 	}
 	
 }

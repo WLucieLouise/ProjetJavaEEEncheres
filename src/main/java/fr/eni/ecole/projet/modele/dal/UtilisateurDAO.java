@@ -10,7 +10,7 @@ public interface UtilisateurDAO {
 
 	Utilisateur suprimerUtilisateur(Utilisateur utilisateur);
 
-	Utilisateur selectUtilisateur(Utilisateur utilisateur);
+//	Utilisateur selectUtilisateur(Utilisateur utilisateur);
 
-	Utilisateur verifConnection(String identifiant, String mdp);
+	Utilisateur verifierConnexion(String pseudo, String mdp);
 }

@@ -39,10 +39,10 @@ public class CreationCompteServlet extends HttpServlet {
 		String rue = request.getParameter("rue");
 		String code_postal = request.getParameter("code_postal");
 		String ville = request.getParameter("ville");
-		String mot_de_passe = request.getParameter("mot_de_passe");
-		String confirm_mot_de_passe = request.getParameter("confirm_mot_de_passe");
+		String motDePasse = request.getParameter("motDePasse");
+		String confirmerMotDePasse = request.getParameter("confirmerMotDePasse");
 		
-		boolean verif = UtilisateurManager.verifMotDePasse(mot_de_passe, confirm_mot_de_passe);
+		boolean verif = UtilisateurManager.verifMotDePasse(motDePasse, confirmerMotDePasse);
 		
 		if(verif) {
 			Utilisateur utilisateur = utilisateurManager.creerUtilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, confirm_mot_de_passe);

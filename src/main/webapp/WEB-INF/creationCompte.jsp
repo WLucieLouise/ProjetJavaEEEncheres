@@ -25,10 +25,10 @@
 		<input type="text" id="code_postal" name="code_postal">
 		<label for="ville">Ville : </label>
 		<input type="text" id="ville" name="ville"><br>
-		<label for="mot_de_passe">Mot de passe : </label>
-		<input type="password" id="mot_de_passe" name="mot_de_passe">
-		<label for="confirm_mot_de_passe">Confirmation du mot de passe : </label>
-		<input type="password" id="confirm_mot_de_passe" name="confirm_mot_de_passe"><br>
+		<label for="motDePasse">Mot de passe : </label>
+		<input type="password" id="motDePasse" name="motDePasse">
+		<label for="confirmerMotDePasse">Confirmation du mot de passe : </label>
+		<input type="password" id="confirmerMotDePasse" name="confirmerMotDePasse"><br>
 		<input type="submit" value="Créer"/>
 		<input type="reset" value="Annuler">
 	</form>

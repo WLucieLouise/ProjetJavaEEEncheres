@@ -80,38 +80,38 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 	}
 	
 	//SELECT Utilisateur par son numéro
-	@Override
-	public Utilisateur selectUtilisateur( Utilisateur utilisateur ){
-
-			String bddSelectId= "SELECT * FROM personnes WHERE no_utilisateur=?";
+//	@Override
+//	public Utilisateur selectUtilisateur( Utilisateur utilisateur ){
+//
+//			String bddSelectId= "SELECT * FROM personnes WHERE no_utilisateur=?";
+//			
+//			try (Connection connection = ConnectionProvider.getConnection();) {
+//					
+//
+//					PreparedStatement statement = connection.prepareStatement(bddSelectId);	
+//
+//					statement.setInt(1, utilisateur.getNoUtilisateur());
+//	
+//					ResultSet result = statement.executeQuery();
+//					
+//					// 5. Exploitation des résultats
+//////					Personne personne = new Personne();
+//////					if (result.next())
+//////					{
+//////						Personne p = new Personne(
+//////						result.getString("prenom"),
+//////						result.getString("nom"),
+//////						result.getString("mail"),
+//////						
+//////							);
+////					//System.out.println(p); la solution fonctionnait mais revois ton affichage
+//					}
+//					return utilisateur;
+//
+////				} void Identifier (SQLException e) {
+////					e.printStackTrace();
+//				} 
 			
-			try (Connection connection = ConnectionProvider.getConnection();) {
-					
-
-					PreparedStatement statement = connection.prepareStatement(bddSelectId);	
-
-					statement.setInt(1, utilisateur.getNoUtilisateur());
-	
-					ResultSet result = statement.executeQuery();
-					
-					// 5. Exploitation des résultats
-					Personne personne = new Personne();
-					if (result.next())
-					{
-						Personne p = new Personne(
-						result.getString("prenom"),
-						result.getString("nom"),
-						result.getString("mail"),
-						
-							);
-					//System.out.println(p); la solution fonctionnait mais revois ton affichage
-					}
-					return personne;
-
-				} catch (SQLException e) {
-					e.printStackTrace();
-				} 
-			}
 	
 	//DELETE (supprimer mon compte)
 	@Override
@@ -138,15 +138,15 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 
 	// SELECT (verification des identifiants pour la connection)
 	@Override
-	public Utilisateur verifConnection(String identifiant, String mdp) {
-		String sqlSelect = "SELECT * FROM Utilisateur WHERE email=? and mot_de_passe=?";
+	public Utilisateur verifierConnexion(String pseudo, String mdp) {
+		String sqlSelect = "SELECT * FROM Utilisateur WHERE pseudo=? and mot_de_passe=?";
 		Utilisateur utilisateur = new Utilisateur();
 		try (
 
 				Connection connection = ConnectionProvider.getConnection();) {
 
 			PreparedStatement statement = connection.prepareStatement(sqlSelect);
-			statement.setString(1, identifiant);
+			statement.setString(1, pseudo);
 			statement.setString(2, mdp);
 
 			ResultSet rs = statement.executeQuery();
