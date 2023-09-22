@@ -1,4 +1,4 @@
-package fr.eni.ecole.projet.modele.dal;
+ppackage fr.eni.ecole.projet.modele.dal;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
