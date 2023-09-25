@@ -28,7 +28,7 @@
 		<label for="mot_de_passe">Mot de passe : </label>
 		<input type="password" id="mot_de_passe" name="mot_de_passe">
 		<label for="confirm_mot_de_passe">Confirmation du mot de passe : </label>
-		<input type="password" id="confirm_mot_de_passe" name="confirm_mot_de_passe"><br>
+		<input type="password" id="confirm_mot_de_passe" name="confirm_mot_de_passe">${ erreurMdp }<br>
 		<input type="submit" value="Créer"/>
 		<input type="reset" value="Annuler">
 	</form>

@@ -4,16 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDate;
 
 
-//<<<<<<< HEAD
-import fr.eni.ecole.projet.modele.dal.ConnectionProvider;
 import fr.eni.ecole.projet.modele.bo.Utilisateur;
-//=======
-import fr.eni.ecole.projet.modele.bo.Utilisateur;
-//>>>>>>> d5dfe1a7ca9e3b6a116324cd73a29877b19fd2e1
 
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 
@@ -27,6 +20,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 
 			PreparedStatement statement = connection.prepareStatement(bddInsert);
 
+			
 			statement.setString(1, utilisateur.getPseudo());
 			statement.setString(2, utilisateur.getNom());
 			statement.setString(3, utilisateur.getPrenom());
@@ -99,6 +93,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 					if (result.next())
 					{
 						Utilisateur u2 = new Utilisateur(
+						
 						result.getString("pseudo"),
 						result.getString("nom"),
 						result.getString("prenom"),
@@ -145,8 +140,8 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 
 	// SELECT (verification des identifiants pour la connection)
 	@Override
-	public Utilisateur veriferConnexion(String identifiant, String mdp) {
-		String sqlSelect = "SELECT * FROM Utilisateur WHERE email=? and mot_de_passe=?";
+	public Utilisateur verifierConnexion(String identifiant, String mdp) {
+		String sqlSelect = "SELECT * FROM UTILISATEURS WHERE pseudo=? and mot_de_passe=?";
 		Utilisateur utilisateur = new Utilisateur();
 		try (
 
@@ -171,9 +166,9 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
 				utilisateur.setCredit(rs.getInt("credit"));
 				utilisateur.setAdministrateur(rs.getBoolean("administrateur"));
-
+				System.out.println("connexion reussie");
 			}
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 

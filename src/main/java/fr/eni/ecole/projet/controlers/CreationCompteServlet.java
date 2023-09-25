@@ -14,7 +14,7 @@ import fr.eni.ecole.projet.modele.bo.Utilisateur;
 /**
  * Servlet implementation class CreationCompteServlet
  */
-@WebServlet("/CreationCompte")
+@WebServlet("/creationCompte")
 public class CreationCompteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -45,12 +45,12 @@ public class CreationCompteServlet extends HttpServlet {
 		boolean verif = utilisateurManager.verifMotDePasse(mot_de_passe, confirm_mot_de_passe);
 		
 		if(verif) {
-			Utilisateur utilisateur = utilisateurManager.creerUtilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, confirm_mot_de_passe);
+			Utilisateur utilisateur = utilisateurManager.creerUtilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe);
 			request.setAttribute("utilisateur", utilisateur);
-			this.getServletContext().getRequestDispatcher("/creationCompte.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 		} else {
 			request.setAttribute("erreurMdp", "Erreur sur le mot de passe et sa confirmation");
-			this.getServletContext().getRequestDispatcher("/creationCompte.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/creationCompte.jsp").forward(request, response);
 		}
 
 	}

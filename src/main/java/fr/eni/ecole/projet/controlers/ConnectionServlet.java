@@ -34,10 +34,10 @@ public class ConnectionServlet extends HttpServlet {
 		
 		if(utilisateur.getNoUtilisateur()>0) {
 			request.setAttribute("utilisateur", utilisateur);
-			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 		}else{
-			request.setAttribute ("erreur", "Mot de passe ou E-mail incorrect");
-			this.getServletContext().getRequestDispatcher("/formulaireConnection.jsp").forward(request,response);
+			request.setAttribute ("erreur", "Mot de passe ou pseudo incorrect");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/Connection.jsp").forward(request,response);
 		}
 	}
 
