@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.ecole.projet.modele.bll.UtilisateurManagerImpl;
 import fr.eni.ecole.projet.modele.bll.UtilisateurManager;
 import fr.eni.ecole.projet.modele.bo.Utilisateur;
 
@@ -15,6 +16,7 @@ import fr.eni.ecole.projet.modele.bo.Utilisateur;
 public class ConnectionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	UtilisateurManager utilisateurManager= UtilisateurManagerImpl.getInstance();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/Connection.jsp").forward(request, response);
@@ -22,17 +24,17 @@ public class ConnectionServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String identifiant=request.getParameter ("identifiant");
-		String mdp=request.getParameter ("mdp");
+		String pseudo=request.getParameter ("pseudo");
+		String mot_de_passe=request.getParameter ("mot_de_passe");
 		
-		System.out.printf(identifiant);
-		System.out.printf(mdp);
+		/*System.out.printf(pseudo);
+		System.out.printf(mot_de_passe);*/
 		
-		Utilisateur utilisateur= UtilisateurManager.verifierConnexion(email, mdp);
+		Utilisateur utilisateur= utilisateurManager.verifierConnexion(pseudo, mot_de_passe);
 		
 		if(utilisateur.getNoUtilisateur()>0) {
 			request.setAttribute("utilisateur", utilisateur);
-			this.getServletContext().getRequestDispatcher("/compte.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
 		}else{
 			request.setAttribute ("erreur", "Mot de passe ou E-mail incorrect");
 			this.getServletContext().getRequestDispatcher("/formulaireConnection.jsp").forward(request,response);

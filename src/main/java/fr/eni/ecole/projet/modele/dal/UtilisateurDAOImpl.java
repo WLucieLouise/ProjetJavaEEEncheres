@@ -95,22 +95,29 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 					ResultSet result = statement.executeQuery();
 					
 					// 5. Exploitation des résultats
-					Personne personne = new Personne();
+					Utilisateur utili = new Utilisateur();
 					if (result.next())
 					{
-						Personne p = new Personne(
-						result.getString("prenom"),
+						Utilisateur u2 = new Utilisateur(
+						result.getString("pseudo"),
 						result.getString("nom"),
-						result.getString("mail"),
-						
-							);
-					//System.out.println(p); la solution fonctionnait mais revois ton affichage
-					}
-					return personne;
+						result.getString("prenom"),
+						result.getString("email"),
+						result.getString("telephone"),
+						result.getString("rue"),
+						result.getString("code_postal"),
+						result.getString("ville"),
+						result.getString("mot_de_passe"),
+						result.getInt("credit"),
+						result.getBoolean("administrateur"));
+					
+					}return utili;
+				 
 
 				} catch (SQLException e) {
 					e.printStackTrace();
-				} 
+				}
+			return utilisateur;
 			}
 	
 	//DELETE (supprimer mon compte)
@@ -138,7 +145,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 
 	// SELECT (verification des identifiants pour la connection)
 	@Override
-	public Utilisateur verifConnection(String identifiant, String mdp) {
+	public Utilisateur veriferConnexion(String identifiant, String mdp) {
 		String sqlSelect = "SELECT * FROM Utilisateur WHERE email=? and mot_de_passe=?";
 		Utilisateur utilisateur = new Utilisateur();
 		try (

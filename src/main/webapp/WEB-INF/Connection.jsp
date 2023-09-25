@@ -10,12 +10,12 @@
 <h1>Connection</h1>
 
 <form action="Connection" method="post">
-	<label for="identifiant">Identifiant (Votre E-mail): </label>
-	<input type="text" id="identifiant" name="identifiant"/><br/>
-	<label for="mdp">Mot de Passe: </label>
-	<input type="password" id="mdp" name="mdp"/> ${erreur}<br/>
+	<label for="pseudo">Identifiant : </label>
+	<input type="text" id="pseudo" name="pseudo"/><br/>
+	<label for="mot_de_passe">Mot de Passe: </label>
+	<input type="password" id="mot_de_passe" name="mot_de_passe"/> ${erreur}<br/>
 	<input type="submit" value="connection"/>
-	<input type="submit" value="Créer un compte"/>
+	<a href="creationCompte.jsp"><button>Créer un compte</button></a>
 	//partie rappel mdp //se souvenir de moi
 </form>
 
