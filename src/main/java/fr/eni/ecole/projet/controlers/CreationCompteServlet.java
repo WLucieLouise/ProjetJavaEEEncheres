@@ -42,11 +42,11 @@ public class CreationCompteServlet extends HttpServlet {
 		String mot_de_passe = request.getParameter("mot_de_passe");
 		String confirm_mot_de_passe = request.getParameter("confirm_mot_de_passe");
 		
-		boolean verif = UtilisateurManager.verifMotDePasse(mot_de_passe, confirm_mot_de_passe);
+		boolean verif = utilisateurManager.verifMotDePasse(mot_de_passe, confirm_mot_de_passe);
 		
 		if(verif) {
-			Utilisateur utilisateur = utilisateurManager.creerUtilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, confirm_mot_de_passe);
-			request.setAttribute("utilisateur", Utilisateur);
+			Utilisateur utilisateur = utilisateurManager.creerUtilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, confirm_mot_de_passe);
+			request.setAttribute("utilisateur", utilisateur);
 			this.getServletContext().getRequestDispatcher("/creationCompte.jsp").forward(request, response);
 		} else {
 			request.setAttribute("erreurMdp", "Erreur sur le mot de passe et sa confirmation");

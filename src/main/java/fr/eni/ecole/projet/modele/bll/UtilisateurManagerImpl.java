@@ -20,23 +20,26 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 	private UtilisateurManagerImpl() {
 		
 	}
-	
-	public boolean verifMotDePasse(String motDePasse, String confirmerMotDePasse) {
-		if(motDePasse.equals(confirmerMotDePasse)) {
+	@Override
+	public boolean verifMotDePasse(String mot_de_passe, String confirm_mot_de_passe) {
+		if(confirm_mot_de_passe.equals(confirm_mot_de_passe)) {
 			return true;
 		}
 		return false;
 	}
-	
-	public Utilisateur creerUtilisateur(String nom, String prenom, String email, String mot_de_passe) {
-		Utilisateur utilisateur = new Utilisateur(nom, prenom, email, mot_de_passe);
+	@Override
+	public Utilisateur creerUtilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue, String code_postal,String ville, String mot_de_passe,String confirm_mot_de_passe) {
+		Utilisateur utilisateur = new Utilisateur();
 		utilisateurDAO.creerUtilisateur(utilisateur);
 		return utilisateur;
 	}
 
 	@Override
-	public Utilisateur verifierConnexion(String email, String motDePasse) {
-		return utilisateurDAO.verifConnection(email, motDePasse);
+	public Utilisateur verifierConnexion(String pseudo, String mot_de_passe) {
+		return utilisateurDAO.veriferConnexion(pseudo, mot_de_passe);
 	}
+
+	
+	
 	
 }

@@ -11,9 +11,9 @@ public class Utilisateur {
 	private String email;
 	private String telephone;
 	private String rue;
-	private String codePostal;
+	private String code_postal;
 	private String ville;
-	private String motDePasse;
+	private String mot_de_passe;
 	private int credit;
 	private boolean administrateur;
 	
@@ -24,21 +24,23 @@ public class Utilisateur {
 	}
 
 
-	public Utilisateur(int noUtilisateur, String pseudo, String nom, String prenom, String email, String telephone,
-			String rue, String codePostal, String ville, String motDePasse, int credit, boolean administrateur) {
+	public Utilisateur(String pseudo, String nom, String prenom, String email, String telephone,
+			String rue, String code_postal, String ville, String mot_de_passe, int credit, boolean administrateur) {
 		super();
-		this.noUtilisateur = noUtilisateur;
+		
 		this.pseudo = pseudo;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.telephone = telephone;
 		this.rue = rue;
-		this.codePostal = codePostal;
+		this.code_postal = code_postal;
 		this.ville = ville;
-		this.motDePasse = motDePasse;
+		this.mot_de_passe = mot_de_passe;
 		this.credit = credit;
 		this.administrateur = administrateur;
+		
+		
 	}
 
 
@@ -113,12 +115,12 @@ public class Utilisateur {
 
 
 	public String getCodePostal() {
-		return codePostal;
+		return code_postal;
 	}
 
 
-	public void setCodePostal(String codePostal) {
-		this.codePostal = codePostal;
+	public void setCodePostal(String code_postal) {
+		this.code_postal = code_postal;
 	}
 
 
@@ -133,12 +135,12 @@ public class Utilisateur {
 
 
 	public String getMotDePasse() {
-		return motDePasse;
+		return mot_de_passe;
 	}
 
 
-	public void setMotDePasse(String motDePasse) {
-		this.motDePasse = motDePasse;
+	public void setMotDePasse(String mot_de_passe) {
+		this.mot_de_passe = mot_de_passe;
 	}
 
 
@@ -166,7 +168,7 @@ public class Utilisateur {
 	public String toString() {
 		return "Utilisateur [noUtilisateur=" + noUtilisateur + ", pseudo=" + pseudo + ", nom=" + nom + ", prenom="
 				+ prenom + ", email=" + email + ", telephone=" + telephone + ", rue=" + rue + ", codePostal="
-				+ codePostal + ", ville=" + ville + ", motDePasse=" + motDePasse + ", credit=" + credit
+				+ code_postal + ", ville=" + ville + ", motDePasse=" + mot_de_passe + ", credit=" + credit
 				+ ", administrateur=" + administrateur + "]";
 	}
 	
