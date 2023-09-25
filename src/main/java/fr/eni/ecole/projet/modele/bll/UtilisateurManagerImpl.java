@@ -33,7 +33,7 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 
 	
 	public Utilisateur verifierConnexion(String pseudo, String mot_de_passe) {
-		return DAOFactory.getUtilisateurDAO().veriferConnexion(pseudo, mot_de_passe);
+		return DAOFactory.getUtilisateurDAO().verifierConnexion(pseudo, mot_de_passe);
 	}
 
 	

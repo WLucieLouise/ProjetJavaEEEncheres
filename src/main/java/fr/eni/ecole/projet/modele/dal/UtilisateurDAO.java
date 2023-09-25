@@ -12,5 +12,5 @@ public interface UtilisateurDAO {
 
 	Utilisateur selectUtilisateur(Utilisateur utilisateur);
 
-	Utilisateur veriferConnexion(String pseudo, String mot_de_passe);
+	Utilisateur verifierConnexion(String pseudo, String mot_de_passe);
 }

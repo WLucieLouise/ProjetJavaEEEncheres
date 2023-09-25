@@ -138,8 +138,8 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 
 	// SELECT (verification des identifiants pour la connection)
 	@Override
-	public Utilisateur veriferConnexion(String identifiant, String mdp) {
-		String sqlSelect = "SELECT * FROM Utilisateur WHERE email=? and mot_de_passe=?";
+	public Utilisateur verifierConnexion(String identifiant, String mdp) {
+		String sqlSelect = "SELECT * FROM UTILISATEURS WHERE pseudo=? and mot_de_passe=?";
 		Utilisateur utilisateur = new Utilisateur();
 		try (
 
@@ -164,9 +164,9 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
 				utilisateur.setCredit(rs.getInt("credit"));
 				utilisateur.setAdministrateur(rs.getBoolean("administrateur"));
-
+				System.out.println("connexion reussie");
 			}
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 
