@@ -20,6 +20,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 
 			PreparedStatement statement = connection.prepareStatement(bddInsert);
 
+			
 			statement.setString(1, utilisateur.getPseudo());
 			statement.setString(2, utilisateur.getNom());
 			statement.setString(3, utilisateur.getPrenom());
@@ -92,6 +93,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 					if (result.next())
 					{
 						Utilisateur u2 = new Utilisateur(
+						
 						result.getString("pseudo"),
 						result.getString("nom"),
 						result.getString("prenom"),

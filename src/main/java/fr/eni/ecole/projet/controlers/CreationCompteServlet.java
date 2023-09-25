@@ -47,7 +47,7 @@ public class CreationCompteServlet extends HttpServlet {
 		if(verif) {
 			Utilisateur utilisateur = utilisateurManager.creerUtilisateur(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe);
 			request.setAttribute("utilisateur", utilisateur);
-			this.getServletContext().getRequestDispatcher("/WEB-INF/Connection.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 		} else {
 			request.setAttribute("erreurMdp", "Erreur sur le mot de passe et sa confirmation");
 			this.getServletContext().getRequestDispatcher("/WEB-INF/creationCompte.jsp").forward(request, response);

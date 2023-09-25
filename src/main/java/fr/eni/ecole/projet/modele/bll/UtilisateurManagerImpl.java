@@ -19,7 +19,7 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 	}
 	
 	public boolean verifMotDePasse(String mot_de_passe, String confirm_mot_de_passe) {
-		if(confirm_mot_de_passe.equals(confirm_mot_de_passe)) {
+		if(mot_de_passe.equals(confirm_mot_de_passe)) {
 			return true;
 		}
 		return false;
