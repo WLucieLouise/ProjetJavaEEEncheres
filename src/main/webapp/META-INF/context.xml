@@ -3,13 +3,15 @@
 
 <Resource
 	name="mysql"
-		
+
 	driverClassName="com.mysql.cj.jdbc.Driver"
 	type="javax.sql.DataSource"
+
 		
 	url="jdbc:mysql://localhost:3306/ENCHERES"
-	username="sa"
-	password="Moumoune99@"
+	username="root"
+	password=""
+
 		
 	maxTotal="100"
 	maxIdle="30"
@@ -17,14 +19,14 @@
 />
 	
 <Resource
-	name="sqlserver"
-	driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+	name="jdbc/sqlserver"
+	driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
 	type="javax.sql.DataSource"
-		
+	
 	url="jdbc:sqlserver://localhost;databasename=ENCHERES;trustservercertificate=true"
 	username="sa"
-	password="Moumoune99@"
-		
+	password="Pa$$w0rd"
+	
 	maxTotal="100"
 	maxIdle="30"
 	maxWaitMillis="10000"

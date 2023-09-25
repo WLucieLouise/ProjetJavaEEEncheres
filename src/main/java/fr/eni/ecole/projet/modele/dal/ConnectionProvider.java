@@ -19,7 +19,8 @@ abstract class ConnectionProvider {
 		Context context;
 		try {
 			context = new InitialContext();
-			ConnectionProvider.dataSource = (DataSource)context.lookup("java:comp/env/jdbc/pool_cnx");
+			ConnectionProvider.dataSource = (DataSource)context.lookup("java:comp/env/jdbc/sqlserver");
+			//ConnectionProvider.dataSource = (DataSource)context.lookup("java:comp/env/mysql");
 		} catch (NamingException e) {
 			e.printStackTrace();
 			

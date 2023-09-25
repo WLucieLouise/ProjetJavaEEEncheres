@@ -4,16 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDate;
 
 
-//<<<<<<< HEAD
-import fr.eni.ecole.projet.modele.dal.ConnectionProvider;
 import fr.eni.ecole.projet.modele.bo.Utilisateur;
-//=======
-import fr.eni.ecole.projet.modele.bo.Utilisateur;
-//>>>>>>> d5dfe1a7ca9e3b6a116324cd73a29877b19fd2e1
 
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 
