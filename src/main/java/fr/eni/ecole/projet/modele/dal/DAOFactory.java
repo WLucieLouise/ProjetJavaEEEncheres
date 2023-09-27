@@ -6,4 +6,12 @@ public class DAOFactory {
 		return new UtilisateurDAOImpl();
 	}
 	
+	public static CategorieDAO getCategorieDAO() {
+		return new CategorieDAOImpl();
+	}
+	
+	public static ArticleDAO getArticleDAO() {
+		return new ArticleDAOImpl();
+	}
+	
 }
